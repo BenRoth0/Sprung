@@ -1,5 +1,6 @@
-[gd_scene load_steps=167 format=4 uid="uid://d2mu4xc7h2c1c"]
+[gd_scene load_steps=163 format=4 uid="uid://d2mu4xc7h2c1c"]
 
+[ext_resource type="Script" uid="uid://rxt15nipjdl7" path="res://Autoload/game_manager.gd" id="1_66xay"]
 [ext_resource type="Texture2D" uid="uid://btwar7a8yffp5" path="res://Factory/1 Tiles/IndustrialTile_02.png" id="2_0s2o4"]
 [ext_resource type="PackedScene" uid="uid://ddumuctkhmk3y" path="res://spring.tscn" id="2_e2o6t"]
 [ext_resource type="Texture2D" uid="uid://bmv3uxl3y5tfu" path="res://Factory/1 Tiles/IndustrialTile_03.png" id="3_4mai8"]
@@ -40,10 +41,6 @@
 [ext_resource type="Texture2D" uid="uid://cv0i6o6t71n5x" path="res://Factory/1 Tiles/IndustrialTile_79.png" id="38_wys8s"]
 [ext_resource type="Texture2D" uid="uid://b66yna8b11rfi" path="res://Factory/3 Objects/0.png" id="39_qw5ky"]
 [ext_resource type="Texture2D" uid="uid://og0odhxn0dox" path="res://Factory/3 Objects/1.png" id="40_vbt48"]
-[ext_resource type="Texture2D" uid="uid://biyonjhg7v3bh" path="res://Factory/3 Objects/Barrel1.png" id="41_mcyeq"]
-[ext_resource type="Texture2D" uid="uid://cqjoou11xu3g" path="res://Factory/3 Objects/Barrel2.png" id="42_g8r2m"]
-[ext_resource type="Texture2D" uid="uid://bsfg6nsicl1l0" path="res://Factory/3 Objects/Barrel3.png" id="43_08xsp"]
-[ext_resource type="Texture2D" uid="uid://43mcvecphno" path="res://Factory/3 Objects/Barrel4.png" id="44_m03w6"]
 [ext_resource type="Texture2D" uid="uid://cexn7c083iws" path="res://Factory/3 Objects/Bench.png" id="45_end4x"]
 [ext_resource type="Texture2D" uid="uid://cs10oe4sb3e0j" path="res://Factory/3 Objects/Board1.png" id="46_d3lbn"]
 [ext_resource type="Texture2D" uid="uid://ddx1xvymu523q" path="res://Factory/3 Objects/Board2.png" id="47_0cg25"]
@@ -79,8 +76,11 @@
 [ext_resource type="Texture2D" uid="uid://dkfljgokgjdyq" path="res://Factory/3 Objects/Pointer2.png" id="77_px3hy"]
 [ext_resource type="Texture2D" uid="uid://bdlbbxeqnykpf" path="res://Factory/3 Objects/5.png" id="78_8f8qe"]
 [ext_resource type="Texture2D" uid="uid://buc2geuctko3a" path="res://Factory/3 Objects/6.png" id="79_ke0um"]
+[ext_resource type="PackedScene" uid="uid://dw082wvvtiqpb" path="res://openable.tscn" id="79_svdf4"]
+[ext_resource type="SpriteFrames" uid="uid://blm688h45f6f" path="res://Factory/Openable/box.tres" id="80_lh772"]
 [ext_resource type="Texture2D" uid="uid://c8k5xdtivrmwx" path="res://Factory/3 Objects/7.png" id="80_o3erk"]
 [ext_resource type="Texture2D" uid="uid://bliyrwmuaeke7" path="res://Factory/3 Objects/8.png" id="81_8vmfi"]
+[ext_resource type="SpriteFrames" uid="uid://du8r0hn5iwd28" path="res://Factory/Openable/barrel.tres" id="82_0s2o4"]
 [ext_resource type="Texture2D" uid="uid://cbux6wxv4mppl" path="res://Factory/3 Objects/9.png" id="82_u8w2r"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7jktm"]
@@ -334,32 +334,19 @@ sources/73 = SubResource("TileSetAtlasSource_q4l6t")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_asx6p"]
 texture = ExtResource("39_qw5ky")
+margins = Vector2i(0, 3)
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fcb4t"]
 texture = ExtResource("40_vbt48")
+margins = Vector2i(0, 3)
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q587k"]
-texture = ExtResource("41_mcyeq")
-texture_region_size = Vector2i(32, 32)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gu6w2"]
-texture = ExtResource("42_g8r2m")
-texture_region_size = Vector2i(32, 32)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_efwct"]
-texture = ExtResource("43_08xsp")
-texture_region_size = Vector2i(32, 32)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5370x"]
-texture = ExtResource("44_m03w6")
-texture_region_size = Vector2i(32, 32)
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jrysx"]
 texture = ExtResource("45_end4x")
+margins = Vector2i(0, 4)
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
@@ -390,6 +377,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_14k7c"]
 texture = ExtResource("51_5i2ov")
+margins = Vector2i(0, 3)
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
@@ -425,6 +413,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qje4k"]
 texture = ExtResource("58_lmtqe")
+margins = Vector2i(0, 4)
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
@@ -445,21 +434,25 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g7tu2"]
 texture = ExtResource("62_74iwm")
+margins = Vector2i(0, 3)
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a7oj8"]
 texture = ExtResource("63_vuo27")
+margins = Vector2i(0, 4)
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_amry1"]
 texture = ExtResource("64_h17um")
+margins = Vector2i(0, 4)
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_svbav"]
 texture = ExtResource("65_j7epm")
+margins = Vector2i(0, 4)
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
@@ -501,6 +494,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v5or7"]
 texture = ExtResource("73_8seav")
+margins = Vector2i(0, 3)
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
@@ -511,6 +505,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nx0kh"]
 texture = ExtResource("75_bva1w")
+margins = Vector2i(0, 4)
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
@@ -526,26 +521,31 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qdb6p"]
 texture = ExtResource("78_8f8qe")
+margins = Vector2i(0, 3)
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_digpy"]
 texture = ExtResource("79_ke0um")
+margins = Vector2i(0, 3)
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7qp31"]
 texture = ExtResource("80_o3erk")
+margins = Vector2i(0, 3)
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p7wln"]
 texture = ExtResource("81_8vmfi")
+margins = Vector2i(0, 3)
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3pogu"]
 texture = ExtResource("82_u8w2r")
+margins = Vector2i(0, 3)
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
@@ -561,10 +561,6 @@ sources/6 = SubResource("TileSetAtlasSource_digpy")
 sources/7 = SubResource("TileSetAtlasSource_7qp31")
 sources/8 = SubResource("TileSetAtlasSource_p7wln")
 sources/9 = SubResource("TileSetAtlasSource_3pogu")
-sources/10 = SubResource("TileSetAtlasSource_q587k")
-sources/11 = SubResource("TileSetAtlasSource_gu6w2")
-sources/12 = SubResource("TileSetAtlasSource_efwct")
-sources/13 = SubResource("TileSetAtlasSource_5370x")
 sources/14 = SubResource("TileSetAtlasSource_jrysx")
 sources/15 = SubResource("TileSetAtlasSource_vsl7k")
 sources/16 = SubResource("TileSetAtlasSource_3dopg")
@@ -597,6 +593,7 @@ sources/42 = SubResource("TileSetAtlasSource_3as71")
 sources/43 = SubResource("TileSetAtlasSource_vtlbm")
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_66xay")
 
 [node name="WorldBoundaryBottom" type="StaticBody2D" parent="."]
 position = Vector2(-1, 162)
@@ -648,5 +645,20 @@ tile_map_data = PackedByteArray("AAD//wAAOQAAAAAAAAAAAAAAOQAAAAAAAAD+/wAANwAAAAA
 tile_set = SubResource("TileSet_0xutx")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAQAPz/KAAAAAAAAAAHAP//IgAAAAAAAAAHAP7/IgAAAAAAAAAHAP3/IgAAAAAAAAAHAPz/IgAAAAAAAAAHAPv/IgAAAAAAAAAHAPr/IwAAAAAAAAAHAPn/JAAAAAAAAADw//j/IAAAAAAAAAD2////HAAAAAAAAAD3////HAAAAAAAAAD4////HAAAAAAAAAD5////HAAAAAAAAAD1////HAAAAAAAAAD6////HQAAAAAAAAD0////GwAAAAAAAAAMAPn/GQAAAAAAAADv////FAAAAAAAAAAPAPz/DgAAAAAAAADw////KwAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAQAPz/KAAAAAAAAAAHAP//IgAAAAAAAAAHAP7/IgAAAAAAAAAHAP3/IgAAAAAAAAAHAPz/IgAAAAAAAAAHAPv/IgAAAAAAAAAHAPr/IwAAAAAAAAAHAPn/JAAAAAAAAADw//j/IAAAAAAAAAD2////HAAAAAAAAAD3////HAAAAAAAAAD4////HAAAAAAAAAD5////HAAAAAAAAAD1////HAAAAAAAAAD6////HQAAAAAAAAD0////GwAAAAAAAAAMAPn/GQAAAAAAAAAPAPz/DgAAAAAAAADw////KwAAAAAAAAA=")
 tile_set = SubResource("TileSet_c537f")
+
+[node name="Openable" parent="." instance=ExtResource("79_svdf4")]
+position = Vector2(-524, -16)
+sprite_frames = ExtResource("80_lh772")
+initial_state = 1
+
+[node name="Openable2" parent="." instance=ExtResource("79_svdf4")]
+position = Vector2(420, -112)
+sprite_frames = ExtResource("80_lh772")
+initial_state = 1
+
+[node name="Openable3" parent="." instance=ExtResource("79_svdf4")]
+position = Vector2(127, -367)
+sprite_frames = ExtResource("82_0s2o4")
+initial_state = 1

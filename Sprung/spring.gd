@@ -14,6 +14,7 @@ var compressed := false;
 func _ready():
 	sleeping   = false
 	start_pos  = position
+	add_to_group("player"); # For easy collision checks.
 
 func _process(delta):
 	pass#if Input.is_action_pressed("compress") and compressed == false:
