@@ -1,14 +1,14 @@
 extends RigidBody2D
-
-@export var max_compress    := 40.0
-@export var compress_speed := 60.0
-@export var min_force      := 400.0
-@export var max_force      := 1200.0
-
-var charge     := 0.0
-var start_pos  := Vector2.ZERO
+# Inspector variables
+@export var max_compress    := 40.0;
+@export var compress_speed  := 60.0;
+@export var min_force       := 400.0;
+@export var max_force       := 1200.0;
+# Internal state variables
+var charge     := 0.0;
+var start_pos  := Vector2.ZERO;
 var compressed := false;
-
+# Child nodes.
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready():
@@ -46,3 +46,6 @@ func _integrate_forces(state:PhysicsDirectBodyState2D):
 		animation_player.play_backwards("compress");
 		charge = 0;
 		compressed = false;
+		
+func take_damage(damage:int) -> void:
+	GameManager.player_take_damage(damage);

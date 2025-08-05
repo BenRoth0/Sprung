@@ -1,0 +1,79 @@
+[gd_resource type="SpriteFrames" load_steps=11 format=3 uid="uid://mvtvdckc0mag"]
+
+[ext_resource type="Texture2D" uid="uid://c1she47v2dtif" path="res://Factory/4 Animated objects/Chest.png" id="1_e7d8p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w37fy"]
+atlas = ExtResource("1_e7d8p")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7x3ck"]
+atlas = ExtResource("1_e7d8p")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvpk2"]
+atlas = ExtResource("1_e7d8p")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o46vb"]
+atlas = ExtResource("1_e7d8p")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqo61"]
+atlas = ExtResource("1_e7d8p")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwsyv"]
+atlas = ExtResource("1_e7d8p")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lon8v"]
+atlas = ExtResource("1_e7d8p")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3ggl"]
+atlas = ExtResource("1_e7d8p")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sueei"]
+atlas = ExtResource("1_e7d8p")
+region = Rect2(224, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w37fy")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7x3ck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvpk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o46vb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vqo61")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwsyv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lon8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3ggl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sueei")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]

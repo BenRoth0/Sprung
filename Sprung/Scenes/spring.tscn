@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ddumuctkhmk3y"]
+[gd_scene load_steps=10 format=3 uid="uid://ddumuctkhmk3y"]
 
-[ext_resource type="Script" uid="uid://wngvb783b2tj" path="res://spring.gd" id="1_ka4py"]
+[ext_resource type="Script" uid="uid://wngvb783b2tj" path="res://Scripts/spring.gd" id="1_ka4py"]
 [ext_resource type="Texture2D" uid="uid://4st7ykpuiw0" path="res://allen.png" id="2_boyml"]
+[ext_resource type="Script" uid="uid://r2gp7j1ptw2h" path="res://Scripts/hurtbox.gd" id="3_1w5vy"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_boyml"]
 bounce = 0.25
@@ -95,6 +96,9 @@ _data = {
 &"compress": SubResource("Animation_hpppm")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7tg8b"]
+size = Vector2(24, 28)
+
 [node name="Spring" type="RigidBody2D"]
 mass = 10.0
 physics_material_override = SubResource("PhysicsMaterial_boyml")
@@ -108,9 +112,20 @@ texture = ExtResource("2_boyml")
 hframes = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("RectangleShape2D_ka4py")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_xjfja")
 }
+
+[node name="Hurtbox" type="Area2D" parent="."]
+visible = false
+script = ExtResource("3_1w5vy")
+is_active = true
+invulnerability_window = 1.5
+metadata/_custom_type_script = "uid://r2gp7j1ptw2h"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("RectangleShape2D_7tg8b")

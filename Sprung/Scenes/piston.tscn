@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://t4xildp81i12"]
+
+[ext_resource type="Script" uid="uid://cxrfy070xa75v" path="res://Scripts/piston.gd" id="1_8m56d"]
+[ext_resource type="SpriteFrames" uid="uid://bcyj3q2wsa5mg" path="res://Factory/Piston/piston.tres" id="2_8m56d"]
+[ext_resource type="Script" uid="uid://ci6c26cux1eyo" path="res://Scripts/hitbox.gd" id="3_dfd5e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yu86q"]
+size = Vector2(28, 23)
+
+[node name="Piston" type="Node2D"]
+script = ExtResource("1_8m56d")
+sprite_frames = ExtResource("2_8m56d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -32)
+sprite_frames = ExtResource("2_8m56d")
+animation = &"on"
+
+[node name="Hitbox" type="Area2D" parent="."]
+script = ExtResource("3_dfd5e")
+is_active = true
+metadata/_custom_type_script = "uid://ci6c26cux1eyo"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -11.5)
+shape = SubResource("RectangleShape2D_yu86q")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

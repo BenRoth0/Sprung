@@ -14,8 +14,9 @@ var player_in_area:bool=false;
 # Child nodes.
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
+
 func _ready() -> void:
-	animated_sprite.frames = sprite_frames;
+	animated_sprite.sprite_frames = sprite_frames;
 	Transition_To(initial_state);
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

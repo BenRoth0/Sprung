@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dw082wvvtiqpb"]
 
-[ext_resource type="Script" uid="uid://c67ys4tinfudq" path="res://openable.gd" id="1_iwmsm"]
+[ext_resource type="Script" uid="uid://caus102on7agl" path="res://Scripts/openable.gd" id="1_iwmsm"]
 [ext_resource type="SpriteFrames" uid="uid://blm688h45f6f" path="res://Factory/Openable/box.tres" id="2_j70gu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_24p7b"]
@@ -8,6 +8,7 @@ radius = 39.0
 
 [node name="Openable" type="Node2D"]
 script = ExtResource("1_iwmsm")
+initial_state = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_j70gu")

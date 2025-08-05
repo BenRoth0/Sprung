@@ -1,0 +1,79 @@
+[gd_resource type="SpriteFrames" load_steps=11 format=3 uid="uid://bcyj3q2wsa5mg"]
+
+[ext_resource type="Texture2D" uid="uid://dsyesgco6cmty" path="res://Factory/4 Animated objects/Hammer.png" id="1_rjhee"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8m56d"]
+atlas = ExtResource("1_rjhee")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfd5e"]
+atlas = ExtResource("1_rjhee")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yu86q"]
+atlas = ExtResource("1_rjhee")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbexe"]
+atlas = ExtResource("1_rjhee")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bpy4n"]
+atlas = ExtResource("1_rjhee")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wpcs"]
+atlas = ExtResource("1_rjhee")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmsrw"]
+atlas = ExtResource("1_rjhee")
+region = Rect2(160, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8cvym"]
+atlas = ExtResource("1_rjhee")
+region = Rect2(192, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bj543"]
+atlas = ExtResource("1_rjhee")
+region = Rect2(224, 0, 32, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8m56d")
+}],
+"loop": true,
+"name": &"off",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfd5e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yu86q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbexe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bpy4n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wpcs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmsrw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8cvym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bj543")
+}],
+"loop": false,
+"name": &"on",
+"speed": 12.0
+}]
