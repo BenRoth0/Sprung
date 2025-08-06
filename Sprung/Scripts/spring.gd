@@ -8,6 +8,9 @@ extends RigidBody2D
 var charge     := 0.0;
 var start_pos  := Vector2.ZERO;
 var compressed := false;
+var air_slow_duration:float = 1.0  # seconds
+var air_slow_timer:float = 0.0
+var turn_speed := deg_to_rad(360)
 # Child nodes.
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
@@ -22,10 +25,19 @@ func _process(delta):
 	#elif Input.is_action_just_released("compress") and compressed == true:
 		#animation_player.play_backwards("compress");
 
+func _physics_process(delta):
+	if Input.is_action_pressed("compress"):
+		if air_slow_timer > 0:
+			Engine.time_scale = 0.3
+			turn_speed = deg_to_rad(720);
+			air_slow_timer -= delta
+	else:
+		turn_speed = deg_to_rad(360);
+		Engine.time_scale = 1.0
+		
 # ——— ROTATION ———
 func _integrate_forces(state:PhysicsDirectBodyState2D):
 	# Manual turn (steering angle)
-	var turn_speed := deg_to_rad(360)
 	if Input.is_action_pressed("left"):
 		rotation -= turn_speed * state.get_step()
 	elif Input.is_action_pressed("right"):
@@ -45,7 +57,8 @@ func _integrate_forces(state:PhysicsDirectBodyState2D):
 		state.linear_velocity = launch_dir * force
 		animation_player.play_backwards("compress");
 		charge = 0;
+		air_slow_timer = air_slow_duration;
 		compressed = false;
-		
+
 func take_damage(damage:int) -> void:
 	GameManager.player_take_damage(damage);
