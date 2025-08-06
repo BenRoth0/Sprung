@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Sprung"
-run/main_scene="uid://bh3t463kaa8vy"
+run/main_scene="uid://d2mu4xc7h2c1c"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
