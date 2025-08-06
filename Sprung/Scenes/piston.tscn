@@ -20,6 +20,7 @@ frame = 8
 frame_progress = 1.0
 
 [node name="Hitbox" type="Area2D" parent="."]
+visible = false
 script = ExtResource("3_dfd5e")
 is_active = true
 metadata/_custom_type_script = "uid://ci6c26cux1eyo"

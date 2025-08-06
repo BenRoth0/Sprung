@@ -6,6 +6,7 @@ extends CanvasLayer
 func _ready():
 	# Score counter
 	GameManager.score_updated.connect(update_score);
+	score.text = str(0);
 	# Health bar
 	health_bar.min_value = 0.0
 	health_bar.max_value = GameManager.player_max_health;
@@ -13,7 +14,7 @@ func _ready():
 	GameManager.player_health_updated.connect(update_health);
 
 func update_score(new_score):
-	score.text = "Score: " + str(new_score);
+	score.text = str(new_score);
 	
 func update_health(new_health):
 	health_bar.value = new_health;

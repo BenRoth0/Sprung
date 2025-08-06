@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://btwsr402vpxlk"]
+[gd_scene load_steps=7 format=3 uid="uid://btwsr402vpxlk"]
 
 [ext_resource type="Script" uid="uid://cvqxv5gaxqsop" path="res://Scripts/Autoload/hud.gd" id="1_pp0s8"]
 [ext_resource type="Texture2D" uid="uid://4st7ykpuiw0" path="res://allen.png" id="2_5uwal"]
+[ext_resource type="Texture2D" uid="uid://d1x2pwwkg1dvh" path="res://screwie.png" id="3_tlsge"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hifjx"]
-font_size = 22
+font_size = 37
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5uwal"]
 bg_color = Color(0.326333, 0.12688, 0.163564, 1)
@@ -17,24 +18,32 @@ script = ExtResource("1_pp0s8")
 
 [node name="Score" type="Label" parent="."]
 unique_name_in_owner = true
-offset_left = 63.0
-offset_top = 45.0
-offset_right = 176.0
-offset_bottom = 87.0
-text = "Score: 0"
+anchors_preset = -1
+offset_left = 193.0
+offset_top = 63.0
+offset_right = 215.0
+offset_bottom = 114.0
+text = "0"
 label_settings = SubResource("LabelSettings_hifjx")
 metadata/_edit_use_anchors_ = true
 
 [node name="HealthBar" type="ProgressBar" parent="."]
-offset_left = 56.0
-offset_top = 17.0
-offset_right = 336.0
-offset_bottom = 44.0
+offset_left = 141.0
+offset_top = 115.0
+offset_right = 467.0
+offset_bottom = 137.0
 theme_override_styles/background = SubResource("StyleBoxFlat_5uwal")
 theme_override_styles/fill = SubResource("StyleBoxFlat_tlsge")
 show_percentage = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-7, 1)
+scale = Vector2(3, 3)
 texture = ExtResource("2_5uwal")
 offset = Vector2(30, 30)
 hframes = 6
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(173, 82)
+scale = Vector2(3, 3)
+texture = ExtResource("3_tlsge")
