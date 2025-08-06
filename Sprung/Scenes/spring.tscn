@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://ddumuctkhmk3y"]
+[gd_scene load_steps=11 format=3 uid="uid://ddumuctkhmk3y"]
 
 [ext_resource type="Script" uid="uid://wngvb783b2tj" path="res://Scripts/spring.gd" id="1_ka4py"]
 [ext_resource type="Texture2D" uid="uid://4st7ykpuiw0" path="res://allen.png" id="2_boyml"]
 [ext_resource type="Script" uid="uid://r2gp7j1ptw2h" path="res://Scripts/hurtbox.gd" id="3_1w5vy"]
+[ext_resource type="Script" uid="uid://bt4piovspka1o" path="res://Scenes/aim_arc.gd" id="3_7tg8b"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_boyml"]
 bounce = 0.25
@@ -110,6 +111,14 @@ max_force = 800.0
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_boyml")
 hframes = 6
+
+[node name="AimArc" type="Line2D" parent="."]
+texture_filter = 1
+width = 5.0
+default_color = Color(0.0588235, 0.0235294, 1, 0.623529)
+script = ExtResource("3_7tg8b")
+steps = 120
+step_time = 0.04
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
